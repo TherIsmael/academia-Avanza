@@ -12,4 +12,7 @@ controller.list= (req, res)=>{
     })
 }
 
+controller.save=(req,res)=>{
+    
+}
 module.exports=controller 

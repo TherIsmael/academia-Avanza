@@ -21,6 +21,7 @@ app.use(myconection(mysql, {
     port:3306,
     database:'academiaavanza'
 },'single'))
+app.use(express.urlencoded({extended:false}))
 
 //routs
 app.use('/',alumnosRoutes)
