@@ -1,6 +1,15 @@
 const controller ={}
 controller.list= (req, res)=>{
-    res.send('hola mundo')
+    req.getConnection((err, conn)=>{
+        conn.query('select * FROM estudiante',(err,alumnos)=>{
+            if(err){
+                res.json(err)
+            }
+            res.render('alumno',{
+                data:alumnos
+            })
+        })
+    })
 }
 
 module.exports=controller 
