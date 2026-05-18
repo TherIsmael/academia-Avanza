@@ -1,0 +1,55 @@
+:root{
+    --succes-green:#3FF527;
+    --info-blue:#27C2F5;
+    --warning-red:#F52727;
+    --font-size: 16px;
+    --font-family:system-ui;
+    --font-color:black;
+    --font-color-alternative:#EFE3CA;
+    --background-color:#170C79;
+}
+html{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--font-color);
+    height: 100vh;
+    
+}
+.main{
+    display: flex;
+    flex-flow: column wrap;
+    height: inherit;
+}
+.navBar{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: var(--background-color);
+}
+.nav-home{
+    width: 170px;
+    margin-inline-end: 5vw;
+    padding-inline: 2vw;
+}
+.nav-link{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: stretch;
+    padding-right: 5vw;
+}
+
+.link{
+    color: var(--font-color-alternative);
+    font-style: normal;
+    text-decoration: none;
+}
+.formulario{
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.formulario div{
+    display: flex;
+    flex-flow: column wrap;
+}

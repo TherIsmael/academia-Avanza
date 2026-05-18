@@ -1,13 +1,33 @@
-<% include partials/header %>
+<%- include('./partials/_header') %>
 
 <form action="/add" method="post">
     <section class="formulario">
-        <input type="text" name="nombre" placeholder="nombre">
-        <input type="text" name="name" placeholder="nombre">
-        <input type="text" name="name" placeholder="nombre">
-        <input type="text" name="name" placeholder="nombre">
-        <input type="text" name="name" placeholder="nombre">
+        <div class="form-nombre">
+            <label for="nombre">Nombre del alumno</label>
+            <input type="text" name="nombre" placeholder="nombre">
+        </div>
+        <div class="form-apellido">
+            <label for="apellido_paterno">Apellido paterno</label>
+            <input type="text" name="apellido_paterno" placeholder="nombre">
+        </div>
+        <div class="form-email">
+            <label for="email">Correo electronico</label>
+            <input type="text" name="email" placeholder="nombre">
+        </div>
+        <div class="form-fecha">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input type="text" name="fecha_nacimiento" placeholder="nombre">
+        </div>
+        <div class="form-carrera">
+            <label for="carrera">Carrera:</label>
+
+            <select name="carrera" id="carrera">
+                <option value="sistemas">Sistemas</option>
+                <option value="administracion">Administración</option>
+                <option value="contabilidad">Contabilidad</option>
+            </select>
+        </div>
 
     </section>
 </form>
-<% include partials/footer %>
+<%- include('./partials/_footer') %>
