@@ -8,11 +8,16 @@ controller.list= (req, res)=>{
             res.render('alumno',{
                 data:alumnos
             })
-        })
+        })  
     })
 }
 
 controller.save=(req,res)=>{
-    
+    const data=req.body
+    req.getConnection((err, conn)=>{
+        conn.query('INSERT INTO Estudiante set ?',[data], (err,alumno)=>{
+            res.redirect('/')
+        })
+    })
 }
 module.exports=controller 

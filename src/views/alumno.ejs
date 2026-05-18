@@ -31,4 +31,31 @@
     </section>
     <button type="submit" class="form-button">Agregar alumno</button>
 </form>
+
+<table class="tabla-estudiante">
+    <thead>
+        <tr>
+            <th>ID estudiante</th>
+            <th>Nombre estudiante</th>
+            <th>Apellido paterno</th>
+            <th>email</th>
+            <th>Fecha de nacimiento</th>
+            <th>ID carrera</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (data){ %>
+            <% for(var i=0; i < data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].id_estudiante %> </td>
+                    <td><%= data[i].nombre %> </td>
+                    <td><%= data[i].apellido_paterno %> </td>
+                    <td><%= data[i].email %> </td>
+                    <td><%= data[i].fecha_nacimiento%> </td>
+                    <td><%= data[i].id_carrera %> </td>
+                </tr>
+            <% } %>
+        <% } %>
+    </tbody>
+</table>
 <%- include('./partials/_footer') %>
