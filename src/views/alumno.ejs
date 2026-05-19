@@ -41,6 +41,7 @@
             <th>email</th>
             <th>Fecha de nacimiento</th>
             <th>ID carrera</th>
+            <th>Edicion</th>
         </tr>
     </thead>
     <tbody>
@@ -51,8 +52,9 @@
                     <td><%= data[i].nombre %> </td>
                     <td><%= data[i].apellido_paterno %> </td>
                     <td><%= data[i].email %> </td>
-                    <td><%= data[i].fecha_nacimiento%> </td>
+                    <td><%= new Date(data[i].fecha_nacimiento).toLocaleDateString('en-US') %> </td>
                     <td><%= data[i].id_carrera %> </td>
+                    <td><a href="" class="link link-editar">editar</a><br><a href="" class="link link-borrar">borrar</a></td>
                 </tr>
             <% } %>
         <% } %>

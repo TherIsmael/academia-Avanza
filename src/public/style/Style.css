@@ -17,14 +17,17 @@
 }
 html{
     
-    height: 100vh;
+    height: auto;
     
 }
 .main{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     height: inherit;
     align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    padding-block-end: 5vh;
 }
 .navBar{
     height: 50px;
@@ -69,10 +72,33 @@ html{
 .formulario div{
     display: flex;
     flex-flow: column wrap;
+    
 }
 .formulario div *{
     width: 300px;
 }
 .form-button{
     margin-block-start: 30px;
+}
+
+.tabla-estudiante{
+    width: 90vw;
+    margin-block-start: 20px;
+    border-collapse: collapse;
+    padding-block-end: 20px;
+}
+.tabla-estudiante thead,.tabla-estudiante tbody tr {
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    border-color: var(--background-color);
+}
+
+.tabla-estudiante tbody td{
+   text-align: center;
+}
+.link-editar{
+    color: var(--info-blue);
+}
+.link-borrar{
+    color: var(--warning-red);
 }
