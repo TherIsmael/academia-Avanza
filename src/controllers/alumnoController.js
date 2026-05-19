@@ -20,4 +20,13 @@ controller.save=(req,res)=>{
         })
     })
 }
+
+controller.delete = (req, res) => {
+    const { id_estudiante } = req.params
+    req.getConnection((err,conn)=>{
+        conn.query('DELETE FROM estudiante WHERE id_estudiante=?',[id_estudiante],(err,rows)=>{
+            res.redirect('/')
+        })
+    })
+}
 module.exports=controller 
