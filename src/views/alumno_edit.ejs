@@ -1,0 +1,37 @@
+<%- include('./partials/_header') %>
+<form action="/update/<%= data.id_estudiante %>" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id">Id del alumno</label>
+            <input type="text" name="id" value="<%= data.id_estudiante %>">
+        </div>
+        <div class="form-nombre">
+            <label for="nombre">Nombre del alumno</label>
+            <input type="text" name="nombre" value="<%= data.nombre %>">
+        </div>
+        <div class="form-apellido">
+            <label for="apellido_paterno">Apellido paterno</label>
+            <input type="text" name="apellido_paterno" value="<%= data.apellido_paterno %>">
+        </div>
+        <div class="form-email">
+            <label for="email">Correo electronico</label>
+            <input type="email" name="email"value="<%= data.email %>" >
+        </div>
+        <div class="form-fecha">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input type="date" name="fecha_nacimiento" value="<%= data.fecha_nacimiento %>">
+        </div>
+        <div class="form-carrera">
+            <label for="carrera">Carrera:</label>
+
+            <select name="carrera" id="carrera">
+                <option value="sistemas">Sistemas</option>
+                <option value="administracion">Administración</option>
+                <option value="contabilidad">Contabilidad</option>
+            </select>
+        </div>
+
+    </section>
+    <button type="submit" class="form-button">editar alumno</button>
+</form>
+<%- include('./partials/_footer') %>

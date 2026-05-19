@@ -59,7 +59,7 @@
                     <td><%= new Date(data[i].fecha_nacimiento).toLocaleDateString('en-US') %> </td>
                     <td><%= data[i].id_carrera %> </td>
                     <td>
-                        <a href="" class="link link-editar">editar</a><br>
+                        <a href="/update/<%= data[i].id_estudiante %>" class="link link-editar">editar</a><br>
                         <a href="/delete/<%= data[i].id_estudiante %>" class="link link-borrar">borrar</a>
                     </td>
                 </tr>
