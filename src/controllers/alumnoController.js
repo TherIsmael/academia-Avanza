@@ -17,6 +17,10 @@ controller.save=(req,res)=>{
     req.getConnection((err, conn)=>{
         conn.query('INSERT INTO Estudiante set ?',[data], (err,alumno)=>{
             res.redirect('/')
+            if(err){
+    console.log(err);
+    return res.send(err);
+}
         })
     })
 }
@@ -49,7 +53,7 @@ controller.update=(req, res)=>{
     const { id_estudiante } = req.params;
     const newAlumno=req.body
     req.getConnection((err, conn)=>{
-        conn.query('UPDATE estudiante set ? where id_estudiante=?', [newAlumno,id],(err,rows)=>{
+        conn.query('UPDATE estudiante set ? where id_estudiante=?', [newAlumno,id_estudiante],(err,rows)=>{
             res.redirect('/')
         } )
     })

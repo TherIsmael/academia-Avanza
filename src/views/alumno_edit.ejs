@@ -2,8 +2,8 @@
 <form action="/update/<%= data.id_estudiante %>" method="post" class="form">
     <section class="formulario">
         <div class="form-id">
-            <label for="id">Id del alumno</label>
-            <input type="text" name="id" value="<%= data.id_estudiante %>">
+            <label for="id_estudiante">Id del alumno</label>
+            <input type="text" name="id_estudiante" value="<%= data.id_estudiante %>">
         </div>
         <div class="form-nombre">
             <label for="nombre">Nombre del alumno</label>
@@ -24,10 +24,10 @@
         <div class="form-carrera">
             <label for="carrera">Carrera:</label>
 
-            <select name="carrera" id="carrera">
-                <option value="sistemas">Sistemas</option>
-                <option value="administracion">Administración</option>
-                <option value="contabilidad">Contabilidad</option>
+            <select name="id_carrera" id="carrera">
+                <option value="1">Sistemas</option>
+                <option value="2">Administración</option>
+                <option value="3">Contabilidad</option>
             </select>
         </div>
 
