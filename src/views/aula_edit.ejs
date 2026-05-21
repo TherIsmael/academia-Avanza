@@ -1,0 +1,21 @@
+<%- include('./partials/_header') %>
+
+<form action="/aula/update/<%= data.id_aula %>" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_aula">ID Aula</label>
+            <input type="text" name="id_aula" value="<%= data.id_aula %>">
+        </div>
+        <div class="form-id">
+            <label for="capacidad">Capacidad</label>
+            <input type="number" name="capacidad" value="<%= data.capacidad %>">
+        </div>
+        <div class="form-id">
+            <label for="id_edificio_aula">ID Edificio</label>
+            <input type="text" name="id_edificio_aula" value="<%= data.id_edificio_aula %>">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Guardar cambios</button>
+</form>
+
+<%- include('./partials/_footer') %>

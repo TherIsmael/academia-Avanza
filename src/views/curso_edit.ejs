@@ -1,0 +1,25 @@
+<%- include('./partials/_header') %>
+
+<form action="/curso/update/<%= data.id_curso %>" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_curso">ID Curso</label>
+            <input type="text" name="id_curso" value="<%= data.id_curso %>">
+        </div>
+        <div class="form-nombre">
+            <label for="nombre_curso">Nombre del curso</label>
+            <input type="text" name="nombre_curso" value="<%= data.nombre_curso %>">
+        </div>
+        <div class="form-id">
+            <label for="duracion_horas">Duración (horas)</label>
+            <input type="number" name="duracion_horas" value="<%= data.duracion_horas %>">
+        </div>
+        <div class="form-id">
+            <label for="id_carrera">ID Carrera</label>
+            <input type="text" name="id_carrera" value="<%= data.id_carrera %>">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Guardar cambios</button>
+</form>
+
+<%- include('./partials/_footer') %>

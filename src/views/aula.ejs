@@ -1,0 +1,47 @@
+<%- include('./partials/_header') %>
+
+<form action="/aula/add" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_aula">ID Aula</label>
+            <input type="text" name="id_aula" placeholder="id">
+        </div>
+        <div class="form-id">
+            <label for="capacidad">Capacidad</label>
+            <input type="number" name="capacidad" placeholder="capacidad">
+        </div>
+        <div class="form-id">
+            <label for="id_edificio_aula">ID Edificio</label>
+            <input type="text" name="id_edificio_aula" placeholder="id_edificio">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Agregar aula</button>
+</form>
+
+<table class="tabla-estudiante">
+    <thead>
+        <tr>
+            <th>ID Aula</th>
+            <th>Capacidad</th>
+            <th>ID Edificio</th>
+            <th>Edición</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (data){ %>
+            <% for(var i=0; i < data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].id_aula %></td>
+                    <td><%= data[i].capacidad %></td>
+                    <td><%= data[i].id_edificio_aula %></td>
+                    <td>
+                        <a href="/aula/edit/<%= data[i].id_aula %>" class="link link-editar">editar</a><br>
+                        <a href="/aula/delete/<%= data[i].id_aula %>" class="link link-borrar">borrar</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('./partials/_footer') %>

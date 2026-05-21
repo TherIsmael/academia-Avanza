@@ -1,0 +1,59 @@
+<%- include('./partials/_header') %>
+
+<form action="/matricula/add" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_matricula">ID Matrícula</label>
+            <input type="text" name="id_matricula" placeholder="id">
+        </div>
+        <div class="form-fecha">
+            <label for="fecha_matricula">Fecha de matrícula</label>
+            <input type="date" name="fecha_matricula">
+        </div>
+        <div class="form-id">
+            <label for="id_estudiante">ID Estudiante</label>
+            <input type="text" name="id_estudiante" placeholder="id_estudiante">
+        </div>
+        <div class="form-id">
+            <label for="id_curso">ID Curso</label>
+            <input type="text" name="id_curso" placeholder="id_curso">
+        </div>
+        <div class="form-id">
+            <label for="id_aula">ID Aula</label>
+            <input type="text" name="id_aula" placeholder="id_aula">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Agregar matrícula</button>
+</form>
+
+<table class="tabla-estudiante">
+    <thead>
+        <tr>
+            <th>ID Matrícula</th>
+            <th>Fecha Matrícula</th>
+            <th>ID Estudiante</th>
+            <th>ID Curso</th>
+            <th>ID Aula</th>
+            <th>Edición</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (data){ %>
+            <% for(var i=0; i < data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].id_matricula %></td>
+                    <td><%= new Date(data[i].fecha_matricula).toLocaleDateString('es-MX') %></td>
+                    <td><%= data[i].id_estudiante %></td>
+                    <td><%= data[i].id_curso %></td>
+                    <td><%= data[i].id_aula %></td>
+                    <td>
+                        <a href="/matricula/edit/<%= data[i].id_matricula %>" class="link link-editar">editar</a><br>
+                        <a href="/matricula/delete/<%= data[i].id_matricula %>" class="link link-borrar">borrar</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('./partials/_footer') %>

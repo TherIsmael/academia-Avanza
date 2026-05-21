@@ -102,3 +102,75 @@ html{
 .link-borrar{
     color: var(--warning-red);
 }
+.main-hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 .4rem;
+    color: #1a1a2e;
+}
+.hero-sub {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 2rem 1.75rem 1.75rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+}
+    
+
+.card--alumnos { background-color: #3b82f6; }
+.card--matricula { background-color: #10b981; }
+.card--curso { background-color: #f97316; }
+.card--aula { background-color: #4c1d95; }
+
+.card-icon svg {    width: 40px;
+    height: 40px;
+    opacity: .9;
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -.01em;
+}
+.card-desc {
+    font-size: .9rem;
+    margin: 0;
+    opacity: .85;
+    line-height: 1.5;
+}
+
+.card-arrow {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.5rem;
+    font-size: 1.4rem;
+    opacity: .6;
+}
+    

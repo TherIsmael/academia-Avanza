@@ -1,6 +1,6 @@
 <%- include('./partials/_header') %>
 
-<form action="/add" method="post" class="form">
+<form action="/alumnos/add" method="post" class="form">
     <section class="formulario">
         <div class="form-id">
             <label for="id_estudiante">Id del alumno</label>
@@ -12,26 +12,24 @@
         </div>
         <div class="form-apellido">
             <label for="apellido_paterno">Apellido paterno</label>
-            <input type="text" name="apellido_paterno" placeholder="nombre">
+            <input type="text" name="apellido_paterno" placeholder="apellido">
         </div>
         <div class="form-email">
-            <label for="email">Correo electronico</label>
-            <input type="email" name="email" placeholder="nombre">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" placeholder="correo@ejemplo.com">
         </div>
         <div class="form-fecha">
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
-            <input type="date" name="fecha_nacimiento" placeholder="nombre">
+            <input type="date" name="fecha_nacimiento">
         </div>
         <div class="form-carrera">
             <label for="id_carrera">Carrera:</label>
-
             <select name="id_carrera" id="carrera">
                 <option value="1">Sistemas</option>
                 <option value="2">Administración</option>
                 <option value="3">Contabilidad</option>
             </select>
         </div>
-
     </section>
     <button type="submit" class="form-button">Agregar alumno</button>
 </form>
@@ -42,29 +40,30 @@
             <th>ID estudiante</th>
             <th>Nombre estudiante</th>
             <th>Apellido paterno</th>
-            <th>email</th>
+            <th>Email</th>
             <th>Fecha de nacimiento</th>
             <th>ID carrera</th>
-            <th>Edicion</th>
+            <th>Edición</th>
         </tr>
     </thead>
     <tbody>
         <% if (data){ %>
             <% for(var i=0; i < data.length; i++) {%>
                 <tr>
-                    <td><%= data[i].id_estudiante %> </td>
-                    <td><%= data[i].nombre %> </td>
-                    <td><%= data[i].apellido_paterno %> </td>
-                    <td><%= data[i].email %> </td>
-                    <td><%= new Date(data[i].fecha_nacimiento).toLocaleDateString('en-US') %> </td>
-                    <td><%= data[i].id_carrera %> </td>
+                    <td><%= data[i].id_estudiante %></td>
+                    <td><%= data[i].nombre %></td>
+                    <td><%= data[i].apellido_paterno %></td>
+                    <td><%= data[i].email %></td>
+                    <td><%= new Date(data[i].fecha_nacimiento).toLocaleDateString('es-MX') %></td>
+                    <td><%= data[i].id_carrera %></td>
                     <td>
-                        <a href="/update/<%= data[i].id_estudiante %>" class="link link-editar">editar</a><br>
-                        <a href="/delete/<%= data[i].id_estudiante %>" class="link link-borrar">borrar</a>
+                        <a href="/alumnos/update/<%= data[i].id_estudiante %>" class="link link-editar">editar</a><br>
+                        <a href="/alumnos/delete/<%= data[i].id_estudiante %>" class="link link-borrar">borrar</a>
                     </td>
                 </tr>
             <% } %>
         <% } %>
     </tbody>
 </table>
+
 <%- include('./partials/_footer') %>

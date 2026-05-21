@@ -1,0 +1,29 @@
+<%- include('./partials/_header') %>
+
+<form action="/matricula/update/<%= data.id_matricula %>" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_matricula">ID Matrícula</label>
+            <input type="text" name="id_matricula" value="<%= data.id_matricula %>">
+        </div>
+        <div class="form-fecha">
+            <label for="fecha_matricula">Fecha de matrícula</label>
+            <input type="date" name="fecha_matricula" value="<%= data.fecha_matricula %>">
+        </div>
+        <div class="form-id">
+            <label for="id_estudiante">ID Estudiante</label>
+            <input type="text" name="id_estudiante" value="<%= data.id_estudiante %>">
+        </div>
+        <div class="form-id">
+            <label for="id_curso">ID Curso</label>
+            <input type="text" name="id_curso" value="<%= data.id_curso %>">
+        </div>
+        <div class="form-id">
+            <label for="id_aula">ID Aula</label>
+            <input type="text" name="id_aula" value="<%= data.id_aula %>">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Guardar cambios</button>
+</form>
+
+<%- include('./partials/_footer') %>

@@ -1,5 +1,6 @@
 <%- include('./partials/_header') %>
-<form action="/update/<%= data.id_estudiante %>" method="post" class="form">
+
+<form action="/alumnos/update/<%= data.id_estudiante %>" method="post" class="form">
     <section class="formulario">
         <div class="form-id">
             <label for="id_estudiante">Id del alumno</label>
@@ -14,8 +15,8 @@
             <input type="text" name="apellido_paterno" value="<%= data.apellido_paterno %>">
         </div>
         <div class="form-email">
-            <label for="email">Correo electronico</label>
-            <input type="email" name="email"value="<%= data.email %>" >
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" value="<%= data.email %>">
         </div>
         <div class="form-fecha">
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
@@ -23,15 +24,14 @@
         </div>
         <div class="form-carrera">
             <label for="carrera">Carrera:</label>
-
             <select name="id_carrera" id="carrera">
                 <option value="1">Sistemas</option>
                 <option value="2">Administración</option>
                 <option value="3">Contabilidad</option>
             </select>
         </div>
-
     </section>
-    <button type="submit" class="form-button">editar alumno</button>
+    <button type="submit" class="form-button">Guardar cambios</button>
 </form>
+
 <%- include('./partials/_footer') %>

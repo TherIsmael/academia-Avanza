@@ -1,0 +1,53 @@
+<%- include('./partials/_header') %>
+
+<form action="/curso/add" method="post" class="form">
+    <section class="formulario">
+        <div class="form-id">
+            <label for="id_curso">ID Curso</label>
+            <input type="text" name="id_curso" placeholder="id">
+        </div>
+        <div class="form-nombre">
+            <label for="nombre_curso">Nombre del curso</label>
+            <input type="text" name="nombre_curso" placeholder="nombre del curso">
+        </div>
+        <div class="form-id">
+            <label for="duracion_horas">Duración (horas)</label>
+            <input type="number" name="duracion_horas" placeholder="horas">
+        </div>
+        <div class="form-id">
+            <label for="id_carrera">ID Carrera</label>
+            <input type="text" name="id_carrera" placeholder="id_carrera">
+        </div>
+    </section>
+    <button type="submit" class="form-button">Agregar curso</button>
+</form>
+
+<table class="tabla-estudiante">
+    <thead>
+        <tr>
+            <th>ID Curso</th>
+            <th>Nombre Curso</th>
+            <th>Duración (horas)</th>
+            <th>ID Carrera</th>
+            <th>Edición</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (data){ %>
+            <% for(var i=0; i < data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].id_curso %></td>
+                    <td><%= data[i].nombre_curso %></td>
+                    <td><%= data[i].duracion_horas %></td>
+                    <td><%= data[i].id_carrera %></td>
+                    <td>
+                        <a href="/curso/edit/<%= data[i].id_curso %>" class="link link-editar">editar</a><br>
+                        <a href="/curso/delete/<%= data[i].id_curso %>" class="link link-borrar">borrar</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('./partials/_footer') %>
