@@ -2,26 +2,53 @@
 
 <form action="/matricula/update/<%= data.id_matricula %>" method="post" class="form">
     <section class="formulario">
+
         <div class="form-id">
             <label for="id_matricula">ID Matrícula</label>
             <input type="text" name="id_matricula" value="<%= data.id_matricula %>">
         </div>
+
         <div class="form-fecha">
             <label for="fecha_matricula">Fecha de matrícula</label>
             <input type="date" name="fecha_matricula" value="<%= data.fecha_matricula %>">
         </div>
+
         <div class="form-id">
-            <label for="id_estudiante">ID Estudiante</label>
-            <input type="text" name="id_estudiante" value="<%= data.id_estudiante %>">
+            <label for="id_estudiante">Estudiante</label>
+            <select name="id_estudiante">
+                <% estudiantes.forEach(e => { %>
+                    <option value="<%= e.id_estudiante %>"
+                        <%= data.id_estudiante == e.id_estudiante ? 'selected' : '' %>>
+                        <%= e.id_estudiante %> — <%= e.nombre %> <%= e.apellido_paterno %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
         <div class="form-id">
-            <label for="id_curso">ID Curso</label>
-            <input type="text" name="id_curso" value="<%= data.id_curso %>">
+            <label for="id_curso">Curso</label>
+            <select name="id_curso">
+                <% cursos.forEach(c => { %>
+                    <option value="<%= c.id_curso %>"
+                        <%= data.id_curso == c.id_curso ? 'selected' : '' %>>
+                        <%= c.id_curso %> — <%= c.nombre_curso %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
         <div class="form-id">
-            <label for="id_aula">ID Aula</label>
-            <input type="text" name="id_aula" value="<%= data.id_aula %>">
+            <label for="id_aula">Aula</label>
+            <select name="id_aula">
+                <% aulas.forEach(a => { %>
+                    <option value="<%= a.id_aula %>"
+                        <%= data.id_aula == a.id_aula ? 'selected' : '' %>>
+                        <%= a.id_aula %> — Capacidad: <%= a.capacidad %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
     </section>
     <button type="submit" class="form-button">Guardar cambios</button>
 </form>

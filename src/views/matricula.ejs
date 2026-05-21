@@ -2,26 +2,53 @@
 
 <form action="/matricula/add" method="post" class="form">
     <section class="formulario">
+
         <div class="form-id">
             <label for="id_matricula">ID Matrícula</label>
             <input type="text" name="id_matricula" placeholder="id">
         </div>
+
         <div class="form-fecha">
             <label for="fecha_matricula">Fecha de matrícula</label>
             <input type="date" name="fecha_matricula">
         </div>
+
         <div class="form-id">
-            <label for="id_estudiante">ID Estudiante</label>
-            <input type="text" name="id_estudiante" placeholder="id_estudiante">
+            <label for="id_estudiante">Estudiante</label>
+            <select name="id_estudiante">
+                <option value="">-- Selecciona un estudiante --</option>
+                <% estudiantes.forEach(e => { %>
+                    <option value="<%= e.id_estudiante %>">
+                        <%= e.id_estudiante %> — <%= e.nombre %> <%= e.apellido_paterno %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
         <div class="form-id">
-            <label for="id_curso">ID Curso</label>
-            <input type="text" name="id_curso" placeholder="id_curso">
+            <label for="id_curso">Curso</label>
+            <select name="id_curso">
+                <option value="">-- Selecciona un curso --</option>
+                <% cursos.forEach(c => { %>
+                    <option value="<%= c.id_curso %>">
+                        <%= c.id_curso %> — <%= c.nombre_curso %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
         <div class="form-id">
-            <label for="id_aula">ID Aula</label>
-            <input type="text" name="id_aula" placeholder="id_aula">
+            <label for="id_aula">Aula</label>
+            <select name="id_aula">
+                <option value="">-- Selecciona un aula --</option>
+                <% aulas.forEach(a => { %>
+                    <option value="<%= a.id_aula %>">
+                        <%= a.id_aula %> — Capacidad: <%= a.capacidad %>
+                    </option>
+                <% }) %>
+            </select>
         </div>
+
     </section>
     <button type="submit" class="form-button">Agregar matrícula</button>
 </form>
@@ -38,20 +65,20 @@
         </tr>
     </thead>
     <tbody>
-        <% if (data){ %>
-            <% for(var i=0; i < data.length; i++) {%>
+        <% if (data) { %>
+            <% data.forEach(m => { %>
                 <tr>
-                    <td><%= data[i].id_matricula %></td>
-                    <td><%= new Date(data[i].fecha_matricula).toLocaleDateString('es-MX') %></td>
-                    <td><%= data[i].id_estudiante %></td>
-                    <td><%= data[i].id_curso %></td>
-                    <td><%= data[i].id_aula %></td>
+                    <td><%= m.id_matricula %></td>
+                    <td><%= new Date(m.fecha_matricula).toLocaleDateString('es-MX') %></td>
+                    <td><%= m.id_estudiante %></td>
+                    <td><%= m.id_curso %></td>
+                    <td><%= m.id_aula %></td>
                     <td>
-                        <a href="/matricula/edit/<%= data[i].id_matricula %>" class="link link-editar">editar</a><br>
-                        <a href="/matricula/delete/<%= data[i].id_matricula %>" class="link link-borrar">borrar</a>
+                        <a href="/matricula/edit/<%= m.id_matricula %>" class="link link-editar">editar</a><br>
+                        <a href="/matricula/delete/<%= m.id_matricula %>" class="link link-borrar">borrar</a>
                     </td>
                 </tr>
-            <% } %>
+            <% }) %>
         <% } %>
     </tbody>
 </table>

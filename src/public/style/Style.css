@@ -173,4 +173,10 @@ html{
     font-size: 1.4rem;
     opacity: .6;
 }
-    
+
+.form-button{
+    padding: 10px;
+    background-color: var(--succes-green) ;
+    border-radius: 5px;
+    border-style: none;
+}
